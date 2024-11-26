@@ -22,6 +22,7 @@ export default function Login() {
 
   const handlelogin = () => {
     if (Credential.username === "thilan" && Credential.password === "1234") {
+      console.log("Login Successfull");
       setCredentails({ name: "", password: "", error: "" });
       navigate("/dashboard");
     } else {
