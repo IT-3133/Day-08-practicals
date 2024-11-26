@@ -32,6 +32,7 @@ export default function Login() {
   return (
     <>
       <div>
+        <p>{Credential.error}</p>
         <h3>Name:</h3>
         <input type="text" name="username" onChange={handlechange} />
         <h3>Password:</h3>
