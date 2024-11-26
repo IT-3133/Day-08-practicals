@@ -11,7 +11,9 @@ function App() {
   return (
     <>
       
-         <Router> 
+      
+         <Router>
+         <Home/> 
             <Routes>
               <Route path='/aboutus' element={<Aboutus/>}/>
               <Route path='/contactus' element={<Contactus/>}/>
@@ -20,8 +22,9 @@ function App() {
               <Route path='/login' element={<Login/>}/>
             </Routes>
          </Router>
+         
 
-
+         
       
 
     </>
