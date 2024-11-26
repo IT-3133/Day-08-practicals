@@ -1,4 +1,4 @@
-//import { Studentdata } from "../data/data";
+import { Studentdata } from "../data/data";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -20,13 +20,25 @@ export default function Login() {
     }));
   };
 
-  const handlelogin = () => {
-    if (Credential.username === "thilan" && Credential.password === "1234") {
-      console.log("Login Successfull");
-      setCredentails({ name: "", password: "", error: "" });
+  const handlelogin = (e) => {
+    e.preventDefault();
+
+    // Check if user exists in Studentdata
+    const user = Studentdata.find(
+      (user) =>
+        user.name === Credential.username &&
+        user.password === Credential.password
+    );
+
+    if (user) {
+      console.log("Login Successful");
+      setCredentails({ username: "", password: "", error: "" });
       navigate("/dashboard");
     } else {
-      setCredentails({ error: "Please check your username and password !" });
+      setCredentails((prev) => ({
+        ...prev,
+        error: "Please check your username and password!",
+      }));
     }
   };
 
