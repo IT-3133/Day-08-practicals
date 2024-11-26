@@ -1,6 +1,6 @@
 //import { Studentdata } from "../data/data";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -32,12 +32,28 @@ export default function Login() {
   return (
     <>
       <div>
-        <p>{Credential.error}</p>
-        <h3>Name:</h3>
-        <input type="text" name="username" onChange={handlechange} />
-        <h3>Password:</h3>
-        <input type="password" name="password" onChange={handlechange} />
-        <button onClick={handlelogin}>Login</button>
+        <div>
+          <ul>
+            <li>
+              <Link to="/aboutus">About us</Link>
+            </li>
+            <li>
+              <Link to="/contactus">Contact us</Link>
+            </li>
+            <li>
+              <Link to="/home">Home</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p>{Credential.error}</p>
+          <h3>Name:</h3>
+          <input type="text" name="username" onChange={handlechange} />
+          <h3>Password:</h3>
+          <input type="password" name="password" onChange={handlechange} />
+          <br></br>
+          <button onClick={handlelogin}>Login</button>
+        </div>
       </div>
     </>
   );
